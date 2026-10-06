@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>黑道海报 · 人物排版四方案</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#f4f2ec;color:#1b1b1f;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:24px 22px;width:920px}
+  h1{font-size:19px;letter-spacing:.4px}
+  .sub{color:#6a6a6f;font-size:12px;margin-top:6px;line-height:1.6}
+  .rule{height:2px;background:#1b1b1f;margin:13px 0 18px}
+  .oldstrip{display:flex;gap:18px;align-items:center;border:1px solid #c9c5ba;background:#fbfaf6;padding:14px;margin-bottom:14px}
+  .oldstrip .txt{flex:1;min-width:0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .panel{display:flex;gap:12px;align-items:flex-start;border:1px solid #c9c5ba;background:#fbfaf6;padding:12px}
+  .panel .txt{flex:1;min-width:0}
+  h3{font-size:13px;letter-spacing:.3px}
+  h3 .tag{font-size:9.5px;font-weight:400;color:#8a6d1f;border:1px solid #d8c48a;background:#faf3dd;padding:1px 5px;border-radius:2px;margin-left:4px;white-space:nowrap}
+  .badge{font-size:10px;color:#c0392b;border:1px solid #c0392b;padding:0 5px;border-radius:2px;font-weight:600}
+  .meta{font-size:10.5px;color:#8a8a90;margin:5px 0 6px}
+  .panel p{font-size:11px;line-height:1.7;color:#33333a}
+  .panel p.warn{color:#a3543f;margin-top:6px;font-size:10.5px}
+  .note{font-size:10.5px;color:#6a6a6f;line-height:1.7;margin-top:6px}
+  .footnote{font-size:11px;color:#6a6a6f;margin-top:14px;line-height:1.7}
+
+  .c{position:relative;flex:0 0 auto;background:radial-gradient(120% 90% at 50% 30%,#17171d 0%,#0b0b10 62%,#07070b 100%);border:1px solid #000;overflow:hidden}
+  .c.big{width:164px;height:219px}
+  .c.mini{width:120px;height:160px}
+  .b{position:absolute;border:1px solid rgba(231,199,102,.55);background:rgba(231,199,102,.10);border-radius:3px}
+  .b b{position:absolute;left:0;right:0;top:2px;text-align:center;font-size:8px;font-weight:600;color:#e7c766;letter-spacing:.3px}
+  .b.v{border-color:rgba(201,106,90,.6);background:rgba(201,106,90,.10)}
+  .b.v b{color:#d98a78}
+  .b.grey{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.05)}
+  .b.grey b{color:rgba(255,255,255,.75)}
+  .titlebar{position:absolute;left:50%;transform:translateX(-50%);bottom:9px;width:88px;height:11px;border:1px solid rgba(231,199,102,.55);background:rgba(231,199,102,.16);border-radius:2px;font-size:6.5px;color:#e7c766;text-align:center;line-height:9px;letter-spacing:1px}
+  .eyeline{position:absolute;border-top:1px dashed rgba(201,106,90,.55)}
+  .diag{position:absolute;border-top:1px dashed rgba(217,130,118,.85);transform-origin:left center}
+  .dlab{position:absolute;font-size:7px;color:#d98276;letter-spacing:.2px;background:rgba(7,7,11,.6);padding:0 2px}
+  .bracket{position:absolute;border:1px dashed rgba(122,167,217,.55);border-radius:5px}
+  .blab{position:absolute;font-size:7px;color:#9fc0e8;background:rgba(7,7,11,.6);padding:0 2px}
+  .persp{position:absolute;border-top:1px dashed rgba(122,167,217,.45);transform-origin:left center}
+  .vp{position:absolute;width:8px;height:8px;border:1px solid rgba(231,199,102,.7);background:rgba(231,199,102,.2)}
+  .flab{position:absolute;font-size:7px;color:#e7c766;background:rgba(7,7,11,.6);padding:0 2px}
+  .meas{position:absolute;font-size:7px;color:#d98276;letter-spacing:.2px}
+</style>
+</head>
+<body>
+  <h1>黑道海报 · 人物排版四方案</h1>
+  <div class="sub">Mafia Princess: Back from Hell ｜ 竖版 3:4 ｜ 先诊断“呆”，再选一套机制各异的排布（A 对角 / B 纵深 / C 尺度 / D 关系）｜ 选中后出对应 v8 提示词</div>
+  <div class="rule"></div>
+
+  <!-- 旧版诊断 -->
+  <div class="oldstrip">
+    <div class="c mini">
+      <div class="eyeline" style="left:6px;right:6px;top:46px"></div>
+      <div class="b grey" style="left:44px;top:30px;width:32px;height:74px"><b>瑞</b></div>
+      <div class="b grey" style="left:78px;top:34px;width:22px;height:70px"><b>唐</b></div>
+      <div class="b grey" style="left:22px;top:38px;width:20px;height:66px"><b>莉</b></div>
+      <div class="b grey" style="left:102px;top:42px;width:16px;height:60px"><b>维</b></div>
+      <div class="b grey" style="left:8px;top:46px;width:12px;height:54px"><b>叔</b></div>
+      <div class="titlebar" style="width:70px">片名区</div>
+    </div>
+    <div class="txt">
+      <h3>旧版：排队式群像 <span class="badge">✗ 呆</span></h3>
+      <p>对称 · 等距 · 同高 · 同向 · 全正面——五病全中：人物各自站岗、无视线关系、无纵深遮挡。这就是“呆”的来源。</p>
+      <p class="note">破呆五招：破对称（重心偏移+配重）· 破等距（疏密）· 破同高（错落）· 破同向（视线成网）· 破全正面（侧身/半脸/遮挡）。</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- A 对角对峙 -->
+    <div class="panel">
+      <div class="c big">
+        <div class="diag" style="left:60px;top:99px;width:67px;transform:rotate(-38.9deg)"></div>
+        <div class="dlab" style="left:46px;top:120px">对角张力线</div>
+        <div class="b" style="left:14px;top:92px;width:56px;height:98px"><b>瑞雯</b></div>
+        <div class="b v" style="left:106px;top:44px;width:44px;height:92px"><b>维多利亚</b></div>
+        <div class="b" style="left:74px;top:100px;width:30px;height:86px"><b>唐</b></div>
+        <div class="b v" style="left:36px;top:36px;width:26px;height:56px"><b>莉娜</b></div>
+        <div class="b v" style="left:128px;top:150px;width:24px;height:42px"><b>二叔</b></div>
+        <div class="titlebar">片名区</div>
+      </div>
+      <div class="txt">
+        <h3>A · 对角对峙式 <span class="tag">机制：对角骨架线+视线网</span></h3>
+        <div class="meta">5 人 · 张力最强 · 生成难度 ★★★</div>
+        <p>瑞雯左下前（最大·侧身右视）↔ 维多利亚右上中（侧身左视），两人视线交错成主对角线；唐居中偏右撑腰；莉娜、二叔错落点缀。</p>
+        <p class="warn">⚠ 提示词必须写明“两人视线交错对视”，否则 AI 会让全员看镜头。</p>
+      </div>
+    </div>
+
+    <!-- B 纵深行进 -->
+    <div class="panel">
+      <div class="c big">
+        <div class="persp" style="left:12px;top:203px;width:170px;transform:rotate(-65.6deg)"></div>
+        <div class="persp" style="left:152px;top:203px;width:170px;transform:rotate(-114.4deg)"></div>
+        <div class="vp" style="left:78px;top:46px"></div>
+        <div class="flab" style="left:88px;top:44px">王座/消失点</div>
+        <div class="b" style="left:58px;top:96px;width:48px;height:100px"><b>瑞雯</b></div>
+        <div class="b" style="left:104px;top:108px;width:28px;height:64px"><b>唐</b></div>
+        <div class="b v" style="left:42px;top:108px;width:26px;height:56px"><b>莉娜</b></div>
+        <div class="b v" style="left:128px;top:116px;width:22px;height:40px"><b>维</b></div>
+        <div class="b v" style="left:22px;top:116px;width:20px;height:36px"><b>叔</b></div>
+        <div class="titlebar">片名区</div>
+      </div>
+      <div class="txt">
+        <h3>B · 纵深行进式 <span class="tag">机制：透视纵深（前/中/远三层）</span></h3>
+        <div class="meta">5 人 · 叙事感最强 · 生成难度 ★★★</div>
+        <p>瑞雯前景中偏左（最大，从黑暗走向镜头）；唐、莉娜中景两侧；维多利亚、二叔远景王座侧。尺度随距离递减、人物互相遮挡。</p>
+        <p class="warn">⚠ 写“前景/中景/远景、被柱影遮挡、从空间中出现”，否则 AI 会摊平成排队。</p>
+      </div>
+    </div>
+
+    <!-- C 大脸聚焦 -->
+    <div class="panel">
+      <div class="c big">
+        <div class="meas" style="left:18px;top:8px">占上 55–60%</div>
+        <div class="b" style="left:16px;top:20px;width:102px;height:120px"><b>瑞雯（大脸+肩）</b></div>
+        <div class="b" style="left:124px;top:104px;width:28px;height:52px"><b>唐</b></div>
+        <div class="b v" style="left:110px;top:158px;width:44px;height:38px;border-style:dashed"><b>维·半脸</b></div>
+        <div class="titlebar">片名区</div>
+      </div>
+      <div class="txt">
+        <h3>C · 大脸聚焦式 <span class="tag">机制：尺度悬殊+偏心</span></h3>
+        <div class="meta">3 人（可加回）· 最稳最高级 · 生成难度 ★★</div>
+        <p>瑞雯大脸+肩占画面上 55–60%（3/4 侧、微偏左）；唐右下小侧影守望；维多利亚右下角黑暗中半张脸——“笑里藏刀”的视觉化。</p>
+        <p class="warn">⚠ 大脸是 AI 相似度最稳的构图；半脸写“黑暗中仅露半张脸与眼睛微光”。</p>
+      </div>
+    </div>
+
+    <!-- D 关系簇拥 -->
+    <div class="panel">
+      <div class="c big">
+        <div class="bracket" style="left:70px;top:90px;width:88px;height:108px"></div>
+        <div class="blab" style="left:74px;top:80px">同盟簇</div>
+        <div class="bracket" style="left:14px;top:106px;width:72px;height:78px"></div>
+        <div class="blab" style="left:16px;top:96px">密谋簇</div>
+        <div class="bracket" style="left:94px;top:28px;width:38px;height:64px"></div>
+        <div class="blab" style="left:96px;top:18px">独影</div>
+        <div class="b" style="left:78px;top:96px;width:44px;height:96px"><b>瑞雯</b></div>
+        <div class="b" style="left:118px;top:104px;width:32px;height:80px"><b>唐</b></div>
+        <div class="b v" style="left:22px;top:112px;width:30px;height:64px"><b>莉娜</b></div>
+        <div class="b v" style="left:48px;top:118px;width:28px;height:54px"><b>维</b></div>
+        <div class="b v" style="left:100px;top:36px;width:26px;height:52px"><b>二叔</b></div>
+        <div class="titlebar">片名区</div>
+      </div>
+      <div class="txt">
+        <h3>D · 关系簇拥式 <span class="tag">机制：关系分组+疏密节奏</span></h3>
+        <div class="meta">5 人 · 戏最足 · 生成难度 ★★★</div>
+        <p>瑞雯+唐＝前右“同盟簇”（贴近）；莉娜+维多利亚＝左中“密谋簇”（私语）；二叔＝上方“独影”。组内靠近有互动、组间留白。</p>
+        <p class="warn">⚠ 写“人物分三组、组内有互动（对视/耳语/并肩）”，否则 AI 会把组摊平。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footnote">四套均自带：① 一条明确动线（对角/纵深/S 形）② 至少破三病 ③ 标题安全区（下中窄幅）。人物数量均可再调（C 为 3 人精简版）。姿势图如需调整（如 B 的行进姿态），出 v8 时一并写进提示词。</div>
+</body>
+</html>

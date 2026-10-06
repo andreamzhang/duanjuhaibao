@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>黑道海报 · 版式骨架 v1</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background:#f4f2ec; color:#1b1b1f; font-family: system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; padding:26px 24px; width:900px; }
+  h1 { font-size:19px; letter-spacing:.4px; }
+  .sub { color:#6a6a6f; font-size:12.5px; margin-top:6px; line-height:1.6; }
+  .rule { height:2px; background:#1b1b1f; margin:14px 0 20px; }
+  .wrap { display:flex; gap:24px; align-items:flex-start; }
+
+  /* ===== 画布 540x720（=1080x1440 的 50% 缩放） ===== */
+  .canvas { position:relative; width:540px; height:720px; flex:0 0 auto; overflow:hidden;
+    background: radial-gradient(120% 90% at 50% 28%, #17171d 0%, #0b0b10 62%, #07070b 100%);
+    border:1px solid #000; box-shadow: 0 14px 34px rgba(0,0,0,.28); }
+
+  /* 12 列网格 */
+  .gridcols { position:absolute; left:36px; top:0; bottom:0; display:flex; gap:12px; pointer-events:none; }
+  .gridcols i { width:28px; background:rgba(122,167,217,.06); border-left:1px solid rgba(122,167,217,.16); border-right:1px solid rgba(122,167,217,.16); }
+
+  /* 安全边距 */
+  .safezone { position:absolute; left:36px; right:36px; top:32px; bottom:40px; border:1px dashed rgba(255,255,255,.30); }
+  /* 中轴 */
+  .axis { position:absolute; left:269px; top:32px; bottom:40px; width:1px; background:rgba(217,130,118,.6); }
+
+  /* 分区 */
+  .zone { position:absolute; left:36px; right:36px; border:1px dashed rgba(217,130,118,.5); }
+  .zone .zlab { position:absolute; right:3px; top:3px; font-size:9px; color:#d98276; letter-spacing:.4px; background:rgba(7,7,11,.65); padding:1px 4px; }
+
+  /* 人物占位块 */
+  .fig { position:absolute; border:1px dashed rgba(255,255,255,.38); background:rgba(255,255,255,.045); border-radius:6px; }
+  .fig b { position:absolute; top:4px; left:0; right:0; text-align:center; font-size:9px; font-weight:600; color:rgba(255,255,255,.82); letter-spacing:.3px; }
+  .fig.raven { background:rgba(231,199,102,.10); border-color:rgba(231,199,102,.55); }
+  .fig.raven b { color:#e7c766; }
+
+  /* 标题组 */
+  .lockup { position:absolute; left:36px; right:36px; top:508px; text-align:center; }
+  .t1 { font-family: Georgia,"Palatino Linotype","Times New Roman",serif; font-size:40px; line-height:1.12; letter-spacing:.6px; color:#e7c766; text-shadow:0 0 24px rgba(231,199,102,.30); }
+  .t2 { font-family: Georgia,"Palatino Linotype","Times New Roman",serif; font-size:29px; line-height:1.15; letter-spacing:.8px; color:#d9b955; margin-top:7px; }
+  .dim { position:absolute; font-size:9px; color:#d98276; letter-spacing:.3px; }
+
+  /* 页脚占位 */
+  .foot { position:absolute; left:36px; right:36px; top:625px; text-align:center; font-size:10px; letter-spacing:2px; color:rgba(255,255,255,.4); }
+
+  /* 落点标记 */
+  .mark { position:absolute; width:14px; height:14px; border-radius:50%; border:1px solid #d98276; background:rgba(7,7,11,.8); color:#f0b3a8; font-size:9px; line-height:12px; text-align:center; }
+
+  /* 右侧面板 */
+  .side { width:280px; flex:0 0 auto; display:flex; flex-direction:column; gap:14px; }
+  .panel { border:1px solid #c9c5ba; background:#fbfaf6; padding:12px 14px; }
+  .panel h2 { font-size:12.5px; letter-spacing:.5px; margin-bottom:8px; border-bottom:1px solid #d8d4c8; padding-bottom:5px; }
+  .panel ul { list-style:none; }
+  .panel li { font-size:11.5px; line-height:1.75; color:#33333a; }
+  .panel li b { color:#111; }
+  .tag { display:inline-block; font-size:9px; border:1px solid #c0392b; color:#c0392b; padding:0 4px; margin-right:4px; letter-spacing:.5px; }
+  .note { font-size:11px; color:#6a6a6f; line-height:1.7; margin-top:16px; }
+  .cap { font-size:11px; color:#6a6a6f; margin-top:10px; line-height:1.6; }
+</style>
+</head>
+<body>
+  <h1>黑道海报 · 版式骨架 v1 <span style="font-weight:400;color:#6a6a6f;">— Mafia Princess: Back from Hell</span></h1>
+  <div class="sub">1080×1440（3:4）｜ 12 列网格 / 8pt 基准 / 中轴对称 ｜ 图中数值均为 1080×1440 实际值（画布按 50% 缩放展示）</div>
+  <div class="rule"></div>
+
+  <div class="wrap">
+    <!-- 画布 -->
+    <div class="canvas">
+      <div class="gridcols"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="safezone"></div>
+      <div class="axis"></div>
+
+      <!-- 分区 -->
+      <div class="zone" style="top:43px;height:461px;"><span class="zlab">主视觉区 6%–70%（五人金字塔群像）</span></div>
+      <div class="zone" style="top:504px;height:115px;"><span class="zlab">标题区 70%–86%</span></div>
+      <div class="zone" style="top:619px;height:58px;"><span class="zlab">页脚区 86%–94%（可留空）</span></div>
+
+      <!-- 人物占位（按 v7 排布：瑞雯C位 / 唐身侧 / 莉娜·维多利亚第二三层 / 二叔边缘） -->
+      <div class="fig raven" style="left:216px;top:150px;width:108px;height:280px;"><b>瑞雯（C位·最大）</b></div>
+      <div class="fig" style="left:330px;top:118px;width:72px;height:254px;"><b>唐（身侧）</b></div>
+      <div class="fig" style="left:132px;top:158px;width:72px;height:228px;"><b>莉娜（二层）</b></div>
+      <div class="fig" style="left:404px;top:152px;width:62px;height:200px;"><b>维多利亚</b></div>
+      <div class="fig" style="left:66px;top:190px;width:50px;height:140px;"><b>二叔</b></div>
+
+      <!-- 标题组 -->
+      <div class="lockup">
+        <div class="t1">Mafia Princess:</div>
+        <div class="t2">Back from Hell</div>
+      </div>
+      <span class="dim" style="left:38px;top:512px;">首行 ≈81px</span>
+      <span class="dim" style="right:38px;top:566px;">次行 ≈59px</span>
+
+      <!-- 页脚 -->
+      <div class="foot">页脚信息区 · 署名 / 日期（可选，≤画面高 2.5%）</div>
+
+      <!-- 落点 -->
+      <div class="mark" style="left:262px;top:158px;">1</div>
+      <div class="mark" style="left:262px;top:506px;">2</div>
+      <div class="mark" style="left:262px;top:622px;">3</div>
+    </div>
+
+    <!-- 右侧面板 -->
+    <div class="side">
+      <div class="panel">
+        <h2>网格参数</h2>
+        <ul>
+          <li><b>画布</b> 1080×1440（3:4）</li>
+          <li><b>12 列</b> · 列宽 56 · Gutter 24</li>
+          <li><b>边距</b> 左右 72 / 上 64 / 下 80（≈6.7%）</li>
+          <li><b>基准</b> 8px（所有间距取 8 的倍数）</li>
+          <li><b>对齐轴</b> 仅 1 条：中轴（红线）</li>
+          <li><b>分区</b> 主视觉 6–70% / 标题 70–86% / 页脚 86–94%</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>标题组 lockup 规格</h2>
+        <ul>
+          <li>首行 <b>≈81px</b>（画面宽 7.5%）· 字距 +0.5px</li>
+          <li>次行 <b>≈59px</b>（≈首行 73%）· 字距 +0.8px</li>
+          <li>行距 ≈28px（首行 35%）；主 : 副 ≈ <b>4 : 2</b></li>
+          <li>换行在冒号后；<b>≤2 行</b>；缩略图 120px 可读</li>
+          <li>与主视觉 ≥48 · 与页脚 ≥48</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>版式检查点</h2>
+        <ul>
+          <li><span class="tag">1</span>只 1–2 条对齐轴（本图=中轴）</li>
+          <li><span class="tag">2</span>字号 3 层清晰：标题 &gt; 副题 &gt; 页脚</li>
+          <li><span class="tag">3</span>间距 8 的倍数；边距 &gt; 内部间距</li>
+          <li><span class="tag">4</span>标题不压脸/手/道具；不贴边</li>
+          <li><span class="tag">5</span>留白 ≥ 主标题高度 1–2 倍</li>
+          <li><span class="tag">6</span>间距只用 2–3 个数值（16/24/48）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cap">落点标记：① 第一视觉落点＝瑞雯面部（中上部）→ ② 标题组 → ③ 页脚。视觉动线沿中轴自上而下。</div>
+  <div class="note">用途：① 生成后校正（标题是否落在安全区、是否压脸）② 后期重排标题与页脚 ③ 作为生成工具的版式参照。<br>方法来源：<code>short-drama-poster</code> 技能 → <code>references/poster-layout.md</code>。</div>
+</body>
+</html>
